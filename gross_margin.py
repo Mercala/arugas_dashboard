@@ -20,7 +20,7 @@ def graph(skew: str, currency: str, unit: str) -> plotly.graph_objs.Figure:
 	# Plot
 	fig = px.line(
     	df, 
-    	title='Gross margin {skew.title()}<br><sup>in {currency.upper()} per {unit.rstrip("s").title()}</sup>,
+    	title='Gross margin {skew.title()}<br><sup>in {currency.upper()} per {unit.rstrip("s").title()}</sup>',
     	color_discrete_sequence = ['#092672', '#0b5672', 'green']
   	)
   
