@@ -12,7 +12,7 @@ def get_sales_data() -> pd.DataFrame:
 	df = pd.read_csv(file_name)
 	
 	# Prep DataFrame
-	df.Date = pd.to_datetime(df.iloc[:, 0], format='%Y%m%d')
+	df['Date']= pd.to_datetime(df.iloc[:, 0], format='%Y%m%d')
 	df.set_index('Date', inplace=True)
 	
 	# Convert units
