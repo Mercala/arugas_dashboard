@@ -38,6 +38,7 @@ def get_graph_backlog(backlog: pd.DataFrame, year: str) -> plotly.graph_objs.Fig
 			'family': 'Arial Narrow',
 			'size': 20
 		},
+		showlegend=False
 # 		legend={
 # 		    'yanchor': "bottom",
 # 		    'y': -0.99,
