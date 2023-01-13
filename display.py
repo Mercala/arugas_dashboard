@@ -31,12 +31,12 @@ st.plotly_chart(
 	kwargs={'year': year}
 	)
 # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
-# st.sidebar.subheader('Gross Margin')
-# skew = st.sidebar.selectbox('SKU', options=['HSH 100 lb', 'HSH 60 lb', 'COM 20 lb', 'COM 60 lb', 'COM 100 lb', 'COM MIX', 'COM BULK', 'MOTOR BULK'])
-# currency = st.sidebar.radio('Currency', ('awg', 'usd'))
-# unit = st.sidebar.selectbox('Quantity unit', options=['kilos', 'pounds', 'gallons', 'liters'])
+st.sidebar.subheader('Gross Margin')
+skew = st.sidebar.selectbox('SKU', options=['HSH 100 lb', 'HSH 60 lb', 'COM 20 lb', 'COM 60 lb', 'COM 100 lb', 'COM MIX', 'COM BULK', 'MOTOR BULK'])
+currency = st.sidebar.radio('Currency', ('awg', 'usd'))
+unit = st.sidebar.selectbox('Quantity unit', options=['kilos', 'pounds', 'gallons', 'liters'])
 
-# gross_margin_fig = gross_margin.graph(skew, currency, unit)
+gross_margin_fig = gross_margin.graph(skew, currency, unit)
 
 # st.plotly_chart(
 # 	gross_margin_fig,
