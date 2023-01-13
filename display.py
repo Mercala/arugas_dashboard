@@ -12,14 +12,14 @@ st.sidebar.subheader('LPG Sales Volume')
 toggle = st.sidebar.radio('Purchase', ('ON', 'OFF'))
 sales_fig = graph_sales.main(toggle)
 
-# st.title('Arugas Financial Dashboard')
+st.title('Arugas Financial Dashboard')
 
-# st.plotly_chart(
-# 	sales_fig,
-#   	theme='streamlit',
-#   	use_container_width=True,
-#   	kwargs={'toggle': toggle}
-#   	)
+st.plotly_chart(
+	sales_fig,
+  	theme='streamlit',
+  	use_container_width=True,
+  	kwargs={'toggle': toggle}
+  	)
 # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 # st.sidebar.subheader('Backlog')
 # year = st.sidebar.selectbox('Year', options=['20221', '2022'])
