@@ -86,7 +86,7 @@ def get_prices(currency='awg'):
 	
 	return prices
 
-def get_revenue(col_name: str , currency: str) -> pd.Series:
+def get_revenue(col_name: str , currency: 'awg') -> pd.Series:
 	quantity = get_data(file_name)
 	prices = get_prices(currency)
 	
@@ -94,7 +94,7 @@ def get_revenue(col_name: str , currency: str) -> pd.Series:
 	df.columns = ['price', 'quantity']
 	df.loc[:, 'price'] = df.loc[:, 'price'].ffill()
 	
-	revenue = df.price * df.quantity
+	revenue = df['price'] * df['quantity']
 	return revenue
 
 def get_quantity(col_name: str, unit: str) -> pd.Series:
