@@ -3,7 +3,7 @@ import purchase
 
 file_name = 'data_sales.csv'
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
-def fetch_constents(col_name: str) -> int:
+def fetch_contents(col_name: str) -> int:
 	contents = {
 		100: ['old_HSH 100 lb', 'new_HSH 100 lb', 'HSH 100 lb', 'COM 100 lb'],
 		 60: ['HSH 60 lb', 'HSH 60 COM'],
