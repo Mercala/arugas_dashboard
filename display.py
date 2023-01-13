@@ -32,7 +32,7 @@ st.plotly_chart(
 	)
 # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 st.sidebar.subheader('Gross Margin')
-skew = st.sidebar.selectbox('SKU', options=['HSH 100 lb', 'HSH 60 lb', 'COM 20 lb', 'COM 60 lb', 'COM 100 lb', 'COM MIX', 'COM BULK', 'MOTOR BULK'])
+skew = st.sidebar.selectbox('SKU', options=['HSH 100 lb', 'HSH 60 lb', 'COM 20 lb', 'COM 60 lb', 'COM 100 lb', 'COM MIX', 'COM BULK', 'MOTOR FUEL'])
 currency = st.sidebar.radio('Currency', ('awg', 'usd'))
 unit = st.sidebar.selectbox('Quantity unit', options=['kilos', 'pounds', 'gallons', 'liters'])
 
