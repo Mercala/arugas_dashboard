@@ -12,7 +12,7 @@ def get_data() -> pd.DataFrame:
 	
 	# Convert and set datetime obj to index
 	df.Date = pd.to_datetime(df.Date)
-	df.drapna(axis=0, how='all', subset='Date', inplace=True)
+	df.dropna(axis=0, how='all', subset='Date', inplace=True)
 	df.set_index('Date', inplace=True)
 	
 	return df
