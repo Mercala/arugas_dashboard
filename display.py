@@ -6,7 +6,6 @@ import sales
 
 PATH = ''
 
-st.write('Hello world!')
 # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 st.sidebar.subheader('LPG Sales Volume')
 toggle = st.sidebar.radio('Purchase', ('ON', 'OFF'))
@@ -21,9 +20,9 @@ st.plotly_chart(
   	kwargs={'toggle': toggle}
   	)
 # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
-# st.sidebar.subheader('Backlog')
-# year = st.sidebar.selectbox('Year', options=['20221', '2022'])
-# backlog_fig = graph_backlog.main(year)
+st.sidebar.subheader('Backlog')
+year = st.sidebar.selectbox('Year', options=['20221', '2022'])
+backlog_fig = graph_backlog.main(year)
 
 # st.plotly_chart(
 # 	backlog_fig,
