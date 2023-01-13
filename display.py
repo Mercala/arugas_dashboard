@@ -8,9 +8,9 @@ PATH = ''
 
 st.write('Hello world!')
 # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
-# st.sidebar.subheader('LPG Sales Volume')
-# toggle = st.sidebar.radio('Purchase', ('ON', 'OFF'))
-# sales_fig = graph_sales.main(toggle)
+st.sidebar.subheader('LPG Sales Volume')
+toggle = st.sidebar.radio('Purchase', ('ON', 'OFF'))
+sales_fig = graph_sales.main(toggle)
 
 # st.title('Arugas Financial Dashboard')
 
