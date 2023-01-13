@@ -2,7 +2,7 @@ import streamlit as st
 import graph_sales
 import graph_backlog
 import gross_margin
-# import sales
+import sales
 
 PATH = ''
 
