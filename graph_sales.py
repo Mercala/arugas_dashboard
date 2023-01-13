@@ -64,7 +64,7 @@ def graph(monthly_sales: pd.Series, purchase_weight: pd.Series, toggle: str) -> 
 	)
 	
 	# Change font for axis
-	fig.update(
+	fig.update_xaxes(
 		title_font_family='Arial Narrow'
 	)
 	
