@@ -109,7 +109,7 @@ def get_quantity(col_name: str, unit: str) -> pd.Series:
 
 def get_price_per_unit(skew: str, currency: str, unit: str) -> pd.Series:
 	price_per_unit = get_revenue(skew, currency) / get_quantity(skew, unit)
-	price_per_name.name = 'revenue'
+	price_per_unit.name = 'revenue'
 	return price_per_unit
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
