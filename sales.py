@@ -6,7 +6,7 @@ file_name = 'data_sales.csv'
 def fetch_contents(col_name: str) -> int:
 	contents = {
 		100: ['old_HSH 100 lb', 'new_HSH 100 lb', 'HSH 100 lb', 'COM 100 lb'],
-		 60: ['HSH 60 lb', 'HSH 60 COM'],
+		 60: ['HSH 60 lb', 'HSH 60 lb'],
 		 20: ['COM 20 lb'],
 		  7: ['CAMP GAS']
 	}
@@ -34,7 +34,7 @@ def to_kilos(df: pd.DataFrame, col_name: str) -> pd.Series:
 	density = purchase.get_density().mean()
 	
 	if not any([col_name in ['HSH BULK', 'COM BULK', 'MOTOR FUEL']]):
-		return df.loc[:, col_name] * contents * lb2kg
+		return df.loc[:, col_name] * contents / lb2kg
 	
 	return df.loc[:, col_name] * (density / 1_000)
 
