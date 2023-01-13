@@ -7,7 +7,7 @@ def get_data() -> pd.DataFrame:
 	file_name = '20221216_prijs_structuur.xlsx'
 	
 	# Read file data
-	excel_obj = pd.read_excel(fp, sheet_name=None)
+	excel_obj = pd.read_excel(file_name, sheet_name=None)
 	df = excel_obj.get('INPUT')
 	
 	# Convert and set datetime obj to index
