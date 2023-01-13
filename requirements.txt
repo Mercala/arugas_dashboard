@@ -3,4 +3,4 @@ plotly==5.11.0
 plotly-express==0.4.1
 streamlit==1.16.0
 numpy==1.23.5
-openpyx1==3.0.10
+openpyxl==3.0.10
