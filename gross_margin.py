@@ -39,6 +39,12 @@ def graph(skew: str, currency: str, unit: str) -> plotly.graph_objs.Figure:
 		font={
 			'family': 'Arial Narrow',
 			'size': 20
+		},
+		legend={
+		    'yanchor': "top",
+		    'y': 0.99,
+		    'xanchor': "left",
+		    'x': 0.01
 		}
 	)
 	
