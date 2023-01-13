@@ -4,7 +4,7 @@ import numpy as np
 import plotly.express as px
 import plotly
 
-# from get_data import get_sales_data
+from get_data import get_sales_data
 import purchase
 
 PATH = ''
