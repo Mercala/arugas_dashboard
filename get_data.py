@@ -6,7 +6,7 @@ L2mt = 1 / 3.78541 * 4.25 / 2_204.62262
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 def get_sales_data() -> pd.DataFrame:
-	file_name_sales = 'data_sales.csv'
+	file_name = 'data_sales.csv'
 	
 	# Read CSV
 	df = pd.read_csv(file_name)
