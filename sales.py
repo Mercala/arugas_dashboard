@@ -20,7 +20,7 @@ def get_data(file_name: str) -> pd.DataFrame:
 	"""Returns Sales data per unit."""
 	df = pd.read_csv(file_name)
 	# Convert and assign datetime obj to index
-	df.Date = pd.to_datetime(df.iloc[:, 0], format='%Y%m%d')
+	df['Date'] = pd.to_datetime(df.iloc[:, 0], format='%Y%m%d')
 	df.set_index('Date', inplace=True)
 	df = df.drop('Unnamed: 0', axis=1)
 	df['HSH 100 lb'] = df['old_HSH 100 lb'] + df['new_HSH 100 lb'].fillna(0)
