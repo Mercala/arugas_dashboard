@@ -4,7 +4,7 @@ import os
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 def get_data() -> pd.DataFrame:
 	# Locate latest file
-	file_name = ''
+	file_name = '20221216_prijs_structuur.xlsx'
 	
 	# Read file data
 	excel_obj = pd.read_excel(fp, sheet_name=None)
