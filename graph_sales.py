@@ -60,7 +60,8 @@ def graph(monthly_sales: pd.Series, purchase_weight: pd.Series, toggle: str) -> 
 		font={
 			'family': 'Arial Narrow',
 			'size': 20
-		}
+		},
+		showlegend=False
 	)
 	
 	# Change font for axis
