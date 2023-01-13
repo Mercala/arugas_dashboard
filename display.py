@@ -21,7 +21,7 @@ st.plotly_chart(
   	)
 # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 st.sidebar.subheader('Backlog')
-year = st.sidebar.selectbox('Year', options=['20221', '2022'])
+year = st.sidebar.selectbox('Year', options=['2021', '2022'])
 backlog_fig = graph_backlog.main(year)
 
 # st.plotly_chart(
