@@ -24,12 +24,12 @@ st.sidebar.subheader('Backlog')
 year = st.sidebar.selectbox('Year', options=['2021', '2022'])
 backlog_fig = graph_backlog.main(year)
 
-# st.plotly_chart(
-# 	backlog_fig,
-# 	theme='streamlit',
-# 	use_container_width=True,
-# 	kwargs={'year': year}
-# 	)
+st.plotly_chart(
+	backlog_fig,
+	theme='streamlit',
+	use_container_width=True,
+	kwargs={'year': year}
+	)
 # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 # st.sidebar.subheader('Gross Margin')
 # skew = st.sidebar.selectbox('SKU', options=['HSH 100 lb', 'HSH 60 lb', 'COM 20 lb', 'COM 60 lb', 'COM 100 lb', 'COM MIX', 'COM BULK', 'MOTOR BULK'])
