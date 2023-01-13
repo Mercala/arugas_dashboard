@@ -4,8 +4,8 @@ import numpy as np
 import plotly.express as px
 import plotly
 
-import purchase
-import sales
+# import purchase
+# import sales
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 def graph(skew: str, currency: str, unit: str) -> plotly.graph_objs.Figure:
