@@ -40,12 +40,12 @@ def graph(skew: str, currency: str, unit: str) -> plotly.graph_objs.Figure:
 			'family': 'Arial Narrow',
 			'size': 20
 		},
-		legend={
-		    'yanchor': "bottom",
-		    'y': -0.99,
-		    'xanchor': "left",
-		    'x': 0.01
-		}
+# 		legend={
+# 		    'yanchor': "bottom",
+# 		    'y': -0.99,
+# 		    'xanchor': "left",
+# 		    'x': 0.01
+# 		}
 	)
 	
 	fig.update_xaxes(title_font_family='Arial Narrow')
