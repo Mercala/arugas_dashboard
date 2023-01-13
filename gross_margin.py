@@ -7,6 +7,7 @@ import plotly
 import purchase
 import sales
 
+import streamlit as st
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 def graph(skew: str, currency: str, unit: str) -> plotly.graph_objs.Figure:
 	cogs = purchase.get_cost_per_unit(currency, unit)
@@ -56,9 +57,9 @@ def graph(skew: str, currency: str, unit: str) -> plotly.graph_objs.Figure:
 if __name__ == '__main__':
 	
 	currency = 'awg'
-	unit = 'liters'
-	skew = 'COM BULK'
+	unit = 'pounds'
+	skew = 'HSH 100 lb'
 	
 	fig = graph(skew, currency, unit)
 	
-	fig.show()
+	st.plotly_chart(fig)
