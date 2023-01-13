@@ -54,7 +54,7 @@ def get_backlog_data(year: str) -> pd.DataFrame:
 	
 	# Convert Datetime obj & set index
 	df.date = pd.to_datetime(df.date, format='%Y%m%d')
-	df.set_index('date', inpalce=True)
+	df.set_index('date', inplace=True)
 	
 	# Sum all orders into Series
 	orders = df.iloc[:, :8].sum(axis=1)
