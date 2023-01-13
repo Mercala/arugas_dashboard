@@ -38,13 +38,13 @@ unit = st.sidebar.selectbox('Quantity unit', options=['kilos', 'pounds', 'gallon
 
 gross_margin_fig = gross_margin.graph(skew, currency, unit)
 
-# st.plotly_chart(
-# 	gross_margin_fig,
-# 	theme='streamlit',
-# 	use_container_width=True,
-# 	kwargs={
-# 		'skew': skew,
-# 		'currency': currency,
-# 		'unit': unit
-# 		}
-# 	)
+st.plotly_chart(
+	gross_margin_fig,
+	theme='streamlit',
+	use_container_width=True,
+	kwargs={
+		'skew': skew,
+		'currency': currency,
+		'unit': unit
+		}
+	)
