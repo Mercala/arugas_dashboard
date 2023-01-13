@@ -41,8 +41,8 @@ def graph(skew: str, currency: str, unit: str) -> plotly.graph_objs.Figure:
 			'size': 20
 		},
 		legend={
-		    'yanchor': "top",
-		    'y': 0.99,
+		    'yanchor': "bottom",
+		    'y': -0.99,
 		    'xanchor': "left",
 		    'x': 0.01
 		}
