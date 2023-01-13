@@ -90,7 +90,7 @@ def get_revenue(col_name: str , currency: str) -> pd.Series:
 	quantity = get_data(file_name)
 	prices = get_prices(currency)
 	
-	df = pd.concat([prices.loc[;, col_name], quantity.loc[:, col_name]], axis=1)
+	df = pd.concat([prices.loc[:, col_name], quantity.loc[:, col_name]], axis=1)
 	df.columns = ['price', 'quantity']
 	df.loc[:, 'price'] df.loc[:, 'price'].ffill()
 	
