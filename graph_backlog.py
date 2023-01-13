@@ -38,12 +38,12 @@ def get_graph_backlog(backlog: pd.DataFrame, year: str) -> plotly.graph_objs.Fig
 			'family': 'Arial Narrow',
 			'size': 20
 		},
-		legend={
-		    'yanchor': "bottom",
-		    'y': -0.99,
-		    'xanchor': "left",
-		    'x': 0.01
-		}
+# 		legend={
+# 		    'yanchor': "bottom",
+# 		    'y': -0.99,
+# 		    'xanchor': "left",
+# 		    'x': 0.01
+# 		}
 	)
 	
 	fig.update_xaxes(title_font_family='Arial Narrow')
