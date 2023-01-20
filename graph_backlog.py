@@ -59,7 +59,7 @@ def get_graph_backlog(backlog: pd.Series, route: str, freq: str, legend: str) ->
 	fig.update_xaxes(title_font_family='Arial Narrow')
 	fig.update_yaxes(
 		title_font_family='Arial Narrow',
-		tickformat=',.0f
+		tickformat=',.0f'
 			)
 	
 	return fig
