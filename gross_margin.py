@@ -45,7 +45,7 @@ def graph(revenue: pd.Series, cogs: pd.Series, skew: str, currency: str, unit: s
 	
 	return fig
 
-def main() ->:
+def main(skew, unit, currency, legend) -> plotly.graph_objs.Figure:
 	
 	cogs = purchase.get_cost_per_unit(currency, unit)
 	revenue = sales_volume_price.get_price_per_unit(skew, currency, unit)
