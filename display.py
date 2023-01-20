@@ -16,7 +16,7 @@ route = st.sidebar.selectbox('Route', options=['all', '1', '2', '3A', '3B', '4',
 currency = st.sidebar.selectbox('Currency', options=['awg', 'usd'])
 skew = st.sidebar.selectbox(
 	'SKU', options=[
-  		'HSH 100 lbs', 
+  		'HSH 100 lb', 
 		'HSH 60 lb',
 		'HSH BULK',
 		'COM 20 lb',
