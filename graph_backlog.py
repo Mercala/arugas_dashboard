@@ -3,7 +3,7 @@ import numpy as np
 
 import plotly.graph_objects as go
 
-from get_data import get_backlog_data
+from backlog import get_backlog_data
 
 #  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 def get_graph_backlog(backlog: pd.Series, route: str, freq: str, legend: str) -> go.Figure:
