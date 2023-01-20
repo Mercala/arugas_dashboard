@@ -51,7 +51,7 @@ st.plotly_chart(
 		'freq': freq,
 		'legend': legend
 	},
-	use_conatainer_width=True
+	use_container_width=True
 )
 
 fig_margin = gross_margin.main(skew, unit, currency, legend)
