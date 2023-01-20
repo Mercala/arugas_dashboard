@@ -1,65 +1,71 @@
 import pandas as pd
 import numpy as np
 
-import plotly.express as px
-import plotly
+import plotly.graph_objects as go
 
 from get_data import get_backlog_data
 
 #  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
-def get_graph_backlog(backlog: pd.DataFrame, year: str) -> plotly.graph_objs.Figure:
+def get_graph_backlog(backlog: pd.Series, route: str, freq: str, legend: str) -> go.Figure:
 	
-	# Prep Colours to highlight import data
-	pallete_1 = np.repeat('#5a5a5a', 12)
-	pallete_1[backlog.loc[:, 'Delivered'].idxmin().month -1] = '#5a232d'
-	pallete_1[backlog.loc[:, 'Delivered'].idxmax().month -1] = '#156563'
+	fig = go.Figure()
 	
-	pallete_2 = np.repeat('gray', 12)
+	def subheader(freq: str) -> str:
+		dct ={
+			'M': 'Months',
+			'W': 'Weeks'
+		}
+		
+		return dct.get(freq)
 	
-	fig = px.bar(
-		backlog,
-		title='Delivery Backlog HSH',
-		color_discrete_sequence=[pallete_1, pallete_2]
-	)
-	
-	fig.update_xaxes(
-		tickformat='%b\n%Y'
-	)
-	
-	fig.update_traces(
-		hovertemplate='<b> %{y} </b>'
-	)
+	def route_name(route) -> str:
+		dct = {
+			'1': 'Noord',
+			'2': 'Tanki Leendert',
+			'3A': 'Oranjestad A',
+			'3B': 'Oranjestad B',
+			'4': 'St. Cruz',
+			'5': 'Savaneta',
+			'6': 'San Nicolas',
+			'all': 'All Routes'
+		}
+		
+		return dct.get(route)
 	
 	fig.update_layout(
+		title=f'Estimated Delivery time {route_name(route)}<br><sup>in {subheader(freq)}</sup>',
 		hovermode='x',
-		xaxis_title=None,
-		yaxis_title='as a Percentage',
+		showlegend=legend,
 		font={
 			'family': 'Arial Narrow',
 			'size': 20
-		},
-		showlegend=False
-# 		legend={
-# 		    'yanchor': "bottom",
-# 		    'y': -0.99,
-# 		    'xanchor': "left",
-# 		    'x': 0.01
-# 		}
+		}
+	)
+			
+	fig.add_scatter(
+		x=backlog_time.index,
+		y=backlog_time.values,
+		name='backlog',
+		line={
+			'shape': 'hv',
+			'color': 'darkgrey'
+		}
+	)
+	
+	fig.update_traces(
+		hovertemplate='<b> %{y:,.1f} </b>'
 	)
 	
 	fig.update_xaxes(title_font_family='Arial Narrow')
+	fig.update_yaxes(
+		title_font_family='Arial Narrow',
+		tickformat=',.0f
+			)
 	
 	return fig
 
-def main(year):
-	backlog = get_backlog_data(year)
-	fig = get_graph_backlog(backlog, year)
+def main(route, years, freq, legend):
+	backlog_time = get_backlog_data(route, years, freq)
+	fig = get_graph_backlog(backlog_time, route, freq, legend)
 	
 	return fig
-
-#  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
-if __name__ == '__main__':
-	
-	year = '2021'
-	main()
-
