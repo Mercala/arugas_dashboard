@@ -38,7 +38,8 @@ st.plotly_chart(
 		'freq': freq,
 		'legend': legend,
 		'mode': mode
-	}
+	},
+	use_container_width=True
 )
 
 fig_backlog = graph_backlog.main(route, years, freq, legend)
@@ -49,7 +50,8 @@ st.plotly_chart(
 		'route': route,
 		'freq': freq,
 		'legend': legend
-	}
+	},
+	use_conatainer_width=True
 )
 
 fig_margin = gross_margin.main(skew, unit, currency, legend)
@@ -60,5 +62,6 @@ st.plotly_chart(
 		'unit': unit,
 		'currency': currency,
 		'legend': legend
-	}
+	},
+	use_container_width=True
 )
