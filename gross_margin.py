@@ -5,13 +5,10 @@ import plotly.express as px
 import plotly
 
 import purchase
-import sales
+import sales_volume_price
 
-import streamlit as st
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
-def graph(skew: str, currency: str, unit: str) -> plotly.graph_objs.Figure:
-	cogs = purchase.get_cost_per_unit(currency, unit)
-	revenue = sales.get_price_per_unit(skew, currency, unit)
+def graph(revenue: pd.Series, cogs: pd.Series, skew: str, currency: str, unit: str, legend: str) -> plotly.graph_objs.Figure:
   
 	# Prep DataFrame
 	df = pd.concat([revenue, cogs], axis=1)
@@ -22,7 +19,7 @@ def graph(skew: str, currency: str, unit: str) -> plotly.graph_objs.Figure:
 	fig = px.line(
     	df, 
     	title=f'Gross margin {skew.title()}<br><sup>in {currency.upper()} per {unit.rstrip("s").title()}</sup>',
-    	color_discrete_sequence = ['#092672', '#0b5672', 'green']
+    	color_discrete_sequence = ['drakgrey', 'grey', 'green']
   	)
   
 	fig.update_xaxes(
@@ -41,26 +38,18 @@ def graph(skew: str, currency: str, unit: str) -> plotly.graph_objs.Figure:
 			'family': 'Arial Narrow',
 			'size': 20
 		},
-		showlegend=False
-# 		legend={
-# 		    'yanchor': "bottom",
-# 		    'y': -0.99,
-# 		    'xanchor': "left",
-# 		    'x': 0.01
-# 		}
+		showlegend=legend
 	)
 	
 	fig.update_xaxes(title_font_family='Arial Narrow')
 	
 	return fig
-#  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
-if __name__ == '__main__':
+def main() ->:
 	
-	currency = 'awg'
-	unit = 'pounds'
-	skew = 'HSH 100 lb'
+	cogs = purchase.get_cost_per_unit(currency, unit)
+	revenue = sales_volume_price.get_price_per_unit(skew, currency, unit)
 	
-	fig = graph(skew, currency, unit)
+	fig = graph(revenue, cogs, skew, currency, unit, legend)
 	
-	st.plotly_chart(fig)
+	return fig
