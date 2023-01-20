@@ -1,5 +1,6 @@
 import pandas as pd
-import purchase 
+import purchase
+from datetime import timedelta
 
 file_name = 'data_sales.csv'
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
@@ -111,12 +112,26 @@ def get_price_per_unit(skew: str, currency: str, unit: str) -> pd.Series:
 	price_per_unit = get_revenue(skew, currency) / get_quantity(skew, unit)
 	price_per_unit.name = 'revenue'
 	return price_per_unit
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 
-if __name__ == '__main__':
+def get_total_volume(unit: str, years: list, freq: str):
+	skews = ['HSH 100 lb', 'HSH BULK', 'HSH 60 lb']
+	hsh = pd.concat([get_quantity(skew, unit) for skew in skews], axis=1)
 	
-	skew = 'HSH 100 lb'
-	currency = 'awg'
-	unit = 'pounds'
+	skews = ['COM 20 lb', 'COM 60 lb', 'COM 100 lb', 'COM MIX', 'COM BULK', 'MOTOR FUEL']
+	com = pd.concat([get_quantity(skew, unit) for skew in skews], axis=1)
 	
-	print(get_price_per_unit(skew, currency, unit))
+	total_hsh = hsh.sum(axis=1).resample(freq).sum()
+	total_com = com.sum(axis=1).resample(freq).sum()
+	
+	if freq == 'M':
+		total_hsh.index = [date - timedelta(date.day - 1) for date in total_hsh.index]
+		total_com.index = [date - timedelta(date.day - 1) for date in total_com.index]
+		
+	total_hsh.index.name = 'Date'
+	total_com.index.name = 'Date'
+	
+	df = pd.concat([total_com, total_hsh], axis=1)
+	df.columns = ['Commercial', 'Household']
+	
+	years = sorted(years)
+	return df.loc[f'{years[0]}-01-01': f'{years[1]}-12-31']
