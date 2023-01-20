@@ -17,9 +17,9 @@ def graph(revenue: pd.Series, cogs: pd.Series, skew: str, currency: str, unit: s
   
 	# Plot
 	fig = px.line(
-    	df, 
-    	title=f'Gross margin {skew.title()}<br><sup>in {currency.upper()} per {unit.rstrip("s").title()}</sup>',
-    	color_discrete_sequence = ['drakgrey', 'grey', 'green']
+		df, 
+		title=f'Gross margin {skew.title()}<br><sup>in {currency.upper()} per {unit.rstrip("s").title()}</sup>',
+		color_discrete_sequence = ['darkgrey', 'grey', 'green']
   	)
   
 	fig.update_xaxes(
