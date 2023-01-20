@@ -3,7 +3,7 @@ from datetime import datetime
 
 import graph_total_volume
 import graph_backlog
-import graph_margin
+import gross_margin
 
 legend = st.sidebar.selectbox('Legend', options=[False, True])
 mode = st.sidebar.selectbox('Barmode', options=['group', 'relative'])
