@@ -134,4 +134,4 @@ def get_total_volume(unit: str, years: list, freq: str):
 	df.columns = ['Commercial', 'Household']
 	
 	years = sorted(years)
-	return df.loc[f'{years[0]}-01-01': f'{years[1]}-12-31']
+	return df.loc[f'{years[0]}-01-01': f'{years[-1]}-12-31']
