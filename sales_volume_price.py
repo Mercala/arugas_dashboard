@@ -114,7 +114,7 @@ def get_price_per_unit(skew: str, currency: str, unit: str) -> pd.Series:
 	return price_per_unit
 
 def get_total_volume(unit: str, years: list, freq: str):
-	skews = ['HSH 100 lb', 'HSH 60 lb', 'HSH MOX', 'HSH BULK']
+	skews = ['HSH 100 lb', 'HSH 60 lb', 'HSH MIX', 'HSH BULK']
 	hsh = pd.concat([get_quantity(skew, unit) for skew in skews], axis=1)
 	
 	skews = ['COM 20 lb', 'COM 60 lb', 'COM 100 lb', 'COM MIX', 'COM BULK', 'MOTOR FUEL']
