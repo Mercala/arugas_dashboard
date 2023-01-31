@@ -42,13 +42,12 @@ st.plotly_chart(
 	use_container_width=True
 )
 
-fig_backlog = graph_backlog.main(route, years, freq, legend)
+fig_backlog = graph_backlog.main(route, years, legend)
 st.plotly_chart(
 	fig_backlog, 
 	kwargs={
 		'years': years,
 		'route': route,
-		'freq': freq,
 		'legend': legend
 	},
 	use_container_width=True
