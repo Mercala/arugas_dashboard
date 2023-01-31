@@ -2,7 +2,7 @@ import pandas as pd
 import purchase
 from datetime import timedelta
 
-file_name = 'data_sales.csv'
+file_name = 'data_2022_monthly.csv'
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
 def fetch_contents(col_name: str) -> int:
 	contents = {
