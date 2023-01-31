@@ -15,7 +15,7 @@ def get_backlog_data(route: str, years: list) -> pd.DataFrame:
 	df_deli.set_index('date', inplace=True)
 
 	freq = 'W'
-	df_sample_back = df_back.resample(freq).sum()
+	df_sample_back = df_back.resample(freq).last()
 	df_sample_deli = df_deli.resample(freq).sum()
 
 	main_back = df_sample_back #.drop('Unnamed: 8', axis=1)
