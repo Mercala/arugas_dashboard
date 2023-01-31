@@ -13,7 +13,9 @@ def get_graph_backlog(backlog_time: pd.Series, route: str, freq: str, legend: st
 	def subheader(freq: str) -> str:
 		dct ={
 			'M': 'Months',
-			'W': 'Weeks'
+			'W': 'Weeks',
+			'Q': 'Quarters',
+			'A': 'Years'
 		}
 		
 		return dct.get(freq)
