@@ -7,7 +7,7 @@ import gross_margin
 
 legend = st.sidebar.selectbox('Legend', options=[False, True])
 mode = st.sidebar.selectbox('Barmode', options=['group', 'relative'])
-freq = st.sidebar.selectbox('Frequency', options=['M', 'W'])
+freq = st.sidebar.selectbox('Frequency', options=['M', 'W', 'Q', 'A'])
 unit = st.sidebar.selectbox('Unit', options=['pounds', 'liters', 'gallons', 'kilos'])
 
 years = st.sidebar.multiselect('Years', options=['2021', '2022', '2023'], default='2022')
