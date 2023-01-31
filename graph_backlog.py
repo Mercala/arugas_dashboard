@@ -6,10 +6,10 @@ import plotly.graph_objects as go
 from backlog import get_backlog_data
 
 #  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - #
-def get_graph_backlog(backlog_time: pd.Series, route: str, freq: str, legend: str) -> go.Figure:
+def get_graph_backlog(backlog_time: pd.Series, route: str, legend: str) -> go.Figure:
 	
 	fig = go.Figure()
-	
+	freq = 'W'
 	def subheader(freq: str) -> str:
 		dct ={
 			'M': 'Months',
