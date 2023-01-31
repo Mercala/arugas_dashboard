@@ -66,8 +66,8 @@ def get_graph_backlog(backlog_time: pd.Series, route: str, legend: str) -> go.Fi
 	
 	return fig
 
-def main(route, years, freq, legend):
-	backlog_time = get_backlog_data(route, years, freq)
-	fig = get_graph_backlog(backlog_time, route, freq, legend)
+def main(route, years, legend):
+	backlog_time = get_backlog_data(route, years)
+	fig = get_graph_backlog(backlog_time, route, legend)
 	
 	return fig
